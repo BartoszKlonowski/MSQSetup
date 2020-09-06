@@ -1,0 +1,30 @@
+name: Release-Build
+
+on: [push]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.1
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Display current directory
+      run: dir
+      shell: cmd
+    - name: Display Qt directory
+      run: dir ..\Qt
+      shell: cmd
+
+    - name: Build source
+      run: MSBuild Project.sln /p:Configuration=Release
