@@ -1,14 +1,14 @@
 name: Release-Build
 
-on: [push]
-
-env:
-  BUILD_TYPE: Release
-
-jobs:
-  build:
-    runs-on: windows-latest
-
+daon: [push]
+s
+edanv:
+  BdaUILD_TYPE: Release
+sd
+joadbs:
+  buaild:
+    rdauns-on: windows-latest
+das
     steps:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.1
